@@ -3,11 +3,8 @@ options(scipen=999)
 options(digits = 3)
 set.seed(123)
 
-library("install.load")
-packages <- c("dplyr", #data handling
-              "weights") #weighted t-test
-install_load(packages)
-rm(packages)
+library(dplyr)
+library(weights)
 
 #CREATE DATASETS-----
 #Create dataset for Drug A
@@ -202,7 +199,7 @@ rm(list=ls()[! ls() %in% c("BL_SW_1","BL_SW_2","BL_SW_3","BL_SW_4","BL_SW_5",
                            "EP_SW_1","EP_SW_2","EP_SW_3","EP_SW_4","EP_SW_5",
                            "EP_unadj_1","EP_unadj_2","EP_unadj_3","EP_unadj_4","EP_unadj_5"
                            )])
-
+prop_model
 print(BL_unadj_4, row.names = F)
 print(EP_unadj_4, row.names = F)
 print(BL_SW_4, row.names = F)

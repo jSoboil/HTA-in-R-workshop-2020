@@ -100,7 +100,7 @@ knitr::include_graphics("timescales.png")
 
 \small 
 ```{r, eval = FALSE}
-for (i in 1:4)){ # 4 transitions in reversible illness-death model
+for (i in 1:4){ # 4 transitions in reversible illness-death model
   wei_fits_cr[[i]] <- flexsurvreg(Surv(years, status) ~ factor(strategy_id),
                                   data = mstate_data,
                                   subset = (trans == i),
@@ -108,7 +108,7 @@ for (i in 1:4)){ # 4 transitions in reversible illness-death model
 }
 wei_fits_cr <- flexsurvreg_list(wei_fits_cr)
 ```
-
+ 
 # Parameters in `hesim` can also be created without fitting a model in `R` 
 \vspace{1em}
 
